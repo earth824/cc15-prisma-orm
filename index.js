@@ -84,27 +84,67 @@ const run = async () => {
     //   }
     // });
 
-    const result = await prisma.user.create({
-      data: {
-        username: 'manuel',
-        password: '123456',
-        transactions: {
-          create: {
-            payee: '7-11',
-            amount: 86,
-            date: new Date('2023-09-05'),
-            category: {
-              create: {
-                name: 'Beverage'
-              }
-            }
-          }
-        }
-      },
-      include: {
-        transactions: true
-      }
-    });
+    // const result = await prisma.user.create({
+    //   data: {
+    //     username: 'manuel',
+    //     password: '123456',
+    //     transactions: {
+    //       create: {
+    //         payee: '7-11',
+    //         amount: 86,
+    //         date: new Date('2023-09-05'),
+    //         category: {
+    //           create: {
+    //             name: 'Beverage'
+    //           }
+    //         }
+    //       }
+    //     }
+    //   },
+    //   include: {
+    //     transactions: true
+    //   }
+    // });
+
+    // UPDATE
+    // const result = await prisma.user.update({
+    //   data: {
+    //     password: '654321'
+    //   },
+    //   where: {
+    //     id: 1
+    //   }
+    // });
+
+    // const result = await prisma.user.updateMany({
+    //   data: {
+    //     password: '098765'
+    //   },
+    //   where: {
+    //     username: {
+    //       startsWith: 'J'
+    //     }
+    //   }
+    // });
+
+    // const result = await prisma.user.upsert({
+    //   create: {
+    //     username: 'ann',
+    //     password: '123456'
+    //   },
+    //   update: {
+    //     password: '123456'
+    //   },
+    //   where: {
+    //     username: 'ann'
+    //   }
+    // });
+
+    // const result = await prisma.user.delete({
+    //   where: {
+    //     username: 'ann'
+    //   }
+    // });
 
     console.log(result);
   } catch (err) {
